@@ -7,7 +7,7 @@ const ProductList = () => {
                 <div className="text-2xl my-4">
                     Trending Products
                 </div>
-                <div className="flex gap-8 mb-4">
+                <div className="flex flex-wrap gap-8">
                     <Product />
                     <Product />
                     <Product />
