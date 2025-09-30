@@ -1,9 +1,9 @@
-const Hero = () => {
+const Hero = ({source} :{source: string}) => {
     return(
         <>
             <div 
-                className="h-[20rem] w-full bg-cover"
-                style={{backgroundImage: `url(https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg)`}}
+                className="h-[45rem] w-full bg-cover"
+                style={{backgroundImage: `url(${source})`}}
             ></div>
         </>
     )
