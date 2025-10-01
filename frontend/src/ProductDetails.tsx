@@ -34,7 +34,7 @@ const ProductDetails = () => {
                             Featuring a round neck and long sleeves. Finished with contrasting ribbed trim.
                         </div>
                         <div className="mt-4">
-                            Special collaboration Harry Lambert for Zara x Disney.
+                            Special collaboration Harry Lambert for Loom.
                         </div>
                     </div>
                 </div>

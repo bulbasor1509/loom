@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Mens from "./Mens.tsx";
 import Womans from "./Womans.tsx";
 import ProductDetails from "./ProductDetails.tsx";
+import Footer from "./components/Footer.tsx";
 
 const App = () => {
     return(
@@ -15,6 +16,7 @@ const App = () => {
                 <Route path="/womans" Component={Womans} />
                 <Route path=":category/:productId" Component={ProductDetails} />
             </Routes>
+            <Footer/>
         </>
     )
 }
