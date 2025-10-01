@@ -14,7 +14,6 @@ ProductsRouter.get("/", async (request: Request, response: Response) => {
             data: products,
             message: "data send successfully"
         })
-
     } catch (err){
         apiResponse.failureReturn({
             response: response,

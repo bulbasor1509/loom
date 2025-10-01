@@ -1,6 +1,6 @@
 import express, {type Request,type Response} from "express"
 import mongoose from "mongoose"
-import {ProductsRouter} from "./routes/product.route.js";
+import {ProductsRouter} from "./routes/product.route.js"
 
 
 const app = express()
