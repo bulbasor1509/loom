@@ -6,7 +6,17 @@ export const ProductsAPI = createApi({
     reducerPath: "productsAPI",
     baseQuery: fetchBaseQuery({baseUrl: "http://localhost:3000/"}),
     endpoints: (builder) => ({
-        getAllProducts: builder.query<ProductType[], string>({
+        getAllProducts: builder.query<ProductType[], void>({
+            query: () => `products`,
+            transformResponse(response: ProductsAPIResponseType){
+                if (response.status === 200){
+                    return response.data
+                } else {
+                    return []
+                }
+            }
+        }),
+        getProductsByGender: builder.query<ProductType[], string>({
             query: (gender) => `products?gender=${gender}`,
             transformResponse(response: ProductsAPIResponseType){
                 if (response.status === 200){
@@ -29,4 +39,4 @@ export const ProductsAPI = createApi({
     }),
 })
 
-export const { useGetAllProductsQuery, useGetProductByIdQuery } = ProductsAPI
+export const { useGetAllProductsQuery, useGetProductsByGenderQuery, useGetProductByIdQuery } = ProductsAPI

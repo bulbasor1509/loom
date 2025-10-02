@@ -6,7 +6,7 @@ import type {RootState} from "../redux/store.ts";
 
 const Navbar = () => {
     const [navBackground, setNavBackground] = useState("bg-transparent")
-    const cartLength = useSelector((state: RootState) => state.cart.length)
+    const cartLength = useSelector<RootState, number>(state => state.cart.length)
 
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <NavLink to="/womans">woman</NavLink>
                         <NavLink to="/cart" className="relative">
                             <div
-                                className="absolute right-[-5px] top-[-3px] bg-black w-4 h-4 rounded-full text-white flex item-center justify-center text-xs"
+                                className="absolute right-[-5px] top-[-3px] bg-black w-4 h-4 rounded-full text-white flex item-center justify-center text-xs font-light"
                             >
                                 {cartLength}
                             </div>

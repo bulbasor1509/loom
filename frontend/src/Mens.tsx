@@ -1,9 +1,9 @@
 import Hero from "./components/Hero.tsx"
 import ProductList from "./components/ProductList.tsx"
-import {useGetAllProductsQuery} from "./redux/services/product.service.ts"
+import {useGetProductsByGenderQuery} from "./redux/services/product.service.ts"
 
 const Mens = () => {
-    const {data} = useGetAllProductsQuery("men")
+    const {data} = useGetProductsByGenderQuery("men")
     return (
         <>
             <div>

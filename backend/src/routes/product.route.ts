@@ -8,15 +8,25 @@ const apiResponse = new APIResponse()
 ProductsRouter.get("/", async (request: Request, response: Response) => {
     try{
         const gender = request.query.gender
-        const products = await Product.find({
-            gender: gender
-        })
-        apiResponse.successReturn({
-            response: response,
-            status: 200,
-            data: products,
-            message: "data send successfully"
-        })
+        if(gender === undefined){
+            const products = await Product.find({})
+            apiResponse.successReturn({
+                response: response,
+                status: 200,
+                data: products,
+                message: "data send successfully"
+            })
+        } else {
+            const products = await Product.find({
+                gender: gender,
+            })
+            apiResponse.successReturn({
+                response: response,
+                status: 200,
+                data: products,
+                message: "data send successfully"
+            })
+        }
     } catch (err){
         apiResponse.failureReturn({
             response: response,
