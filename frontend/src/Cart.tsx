@@ -8,17 +8,27 @@ const Cart = () => {
     const {data: allProducts} = useGetAllProductsQuery()
     // const dispatch = useDispatch<AppDispatch>()
     // console.log(dispatch)
-    const cartItemDetails = cartItems.map(item => {
-        if (allProducts !== undefined){
-            const product = allProducts.find(prod => prod._id === item.productId)
-            if(product){
-                return {
-                    ...product,
-                    quantity: item.quantity,
-                }
-            }
-        }
-    })
+   const cartItemDetails = cartItems.map((item: CartItemType) => {
+       if(allProducts){
+           const product = allProducts.find(prod => prod._id === item.productId)
+           if(product){
+               return {
+                   ...product,
+                   quantity: item.quantity,
+               }
+           }
+       }
+       return null
+   }).filter(item => item !== null)
+
+    console.log(cartItemDetails)
+
+    const cartPrice = cartItemDetails.reduce(
+        (acc, curr) => {
+            return acc + curr.quantity * curr.price
+        }, 0
+    )
+
 
     return (
         <>
@@ -39,6 +49,9 @@ const Cart = () => {
                         </div>
                     )
                 }
+                <div>
+                    {cartPrice}
+                </div>
             </div>
         </>
     )

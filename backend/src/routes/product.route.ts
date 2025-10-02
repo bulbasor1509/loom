@@ -1,58 +1,20 @@
 import express, {type Request, type Response} from "express"
 import Product from "../schema/product.schema.js"
-import {APIResponse} from "../response/response.js";
+import {APIResponse} from "../response/response.js"
+import ProductInventory from "../schema/inventory.schema.js";
+import productSchema from "../schema/product.schema.js";
+import {
+    createProductController,
+    getAllProductsController,
+    getProductByIdController
+} from "../controllers/product.controller.js";
+
+const inventorySizes = ["SM", "M", "L", "XL", "XXL"]
 
 export const ProductsRouter = express.Router()
-const apiResponse = new APIResponse()
 
-ProductsRouter.get("/", async (request: Request, response: Response) => {
-    try{
-        const gender = request.query.gender
-        if(gender === undefined){
-            const products = await Product.find({})
-            apiResponse.successReturn({
-                response: response,
-                status: 200,
-                data: products,
-                message: "data send successfully"
-            })
-        } else {
-            const products = await Product.find({
-                gender: gender,
-            })
-            apiResponse.successReturn({
-                response: response,
-                status: 200,
-                data: products,
-                message: "data send successfully"
-            })
-        }
-    } catch (err){
-        apiResponse.failureReturn({
-            response: response,
-            status: 404,
-            message: (err as Error).message,
-        })
-    }
-})
+ProductsRouter.get("/", getAllProductsController)
 
-ProductsRouter.get("/:productId", async (request: Request, response: Response) => {
-    try {
-        const productId = request.params.productId
-        const product = await Product.findById({
-            _id: productId
-        })
-        apiResponse.successReturn({
-            response: response,
-            status: 200,
-            data: product,
-            message: "data send successfully"
-        })
-    } catch (err){
-        apiResponse.failureReturn({
-            response: response,
-            status: 404,
-            message: (err as Error).message,
-        })
-    }
-})
+ProductsRouter.post("/", createProductController)
+
+ProductsRouter.get("/:productId",getProductByIdController)
