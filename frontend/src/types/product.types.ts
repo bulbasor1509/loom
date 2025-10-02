@@ -1,3 +1,5 @@
+import type {APIResponseType} from "./response.type.ts"
+
 export interface ProductType {
     _id: string
     name : string
@@ -9,10 +11,7 @@ export interface ProductType {
     category: string
 }
 
-export interface APIResponseType {
-    status: number
-    message: string
-}
+
 
 export type ProductsAPIResponseType = {
     data: ProductType[]

@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0f1ee8f5-2425-4153-975e-f2dc195f0612" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/response/response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/response.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/routes/product.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/product.route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/schema/product.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/schema/product.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/product.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/product.types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +51,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;front/rtk&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;back/user&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/pathu/Developer/loom&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -86,7 +90,9 @@
       <workItem from="1759391375429" duration="754000" />
       <workItem from="1759392304392" duration="779000" />
       <workItem from="1759393143127" duration="2165000" />
-      <workItem from="1759396398038" duration="12040000" />
+      <workItem from="1759396398038" duration="12565000" />
+      <workItem from="1759418060685" duration="2609000" />
+      <workItem from="1759421577142" duration="4642000" />
     </task>
     <servers />
   </component>
@@ -111,7 +117,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="front/rtk" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
