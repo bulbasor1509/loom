@@ -5,6 +5,7 @@ import Mens from "./Mens.tsx";
 import Womans from "./Womans.tsx";
 import ProductDetails from "./ProductDetails.tsx";
 import Footer from "./components/Footer.tsx";
+import Cart from "./Cart.tsx";
 // import {useGetAllProductsQuery} from "./redux/services/product.service.ts";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
                 <Route path="/mens" Component={Mens}/>
                 <Route path="/womans" Component={Womans} />
                 <Route path=":category/:productId" Component={ProductDetails} />
+                <Route path="/cart" Component={Cart}/>
             </Routes>
             <Footer/>
         </>

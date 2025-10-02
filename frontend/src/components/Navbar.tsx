@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { useEffect, useState } from "react"
+import { NavLink } from "react-router"
+import { FiShoppingBag } from "react-icons/fi"
 
 const Navbar = () => {
     const [navBackground, setNavBackground] = useState("bg-transparent")
@@ -30,8 +31,11 @@ const Navbar = () => {
                     </div>
                     <div className="h-full flex items-center justify-center gap-8 uppercase text-xs">
                         <NavLink to="/">home</NavLink>
-                        <a href="/mens">mens</a>
-                        <a href="/womans">womans</a>
+                        <NavLink to="/mens">men</NavLink>
+                        <NavLink to="/womans">woman</NavLink>
+                        <NavLink to="/cart">
+                            <FiShoppingBag size={20} />
+                        </NavLink>
                     </div>
                 </div>
             </div>
