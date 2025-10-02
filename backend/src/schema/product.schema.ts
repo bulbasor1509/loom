@@ -2,9 +2,20 @@ import mongoose from "mongoose"
 
 const ProductSchema  = new mongoose.Schema({
     name: {type: String, required: true},
+    image: {type: String, required: true},
     description: {type: String, required: true},
     price: {type: Number, required: true, default: 0},
     quantity: {type: Number, required: true},
+    gender: {
+        type: String,
+        enum: ["male", "female"],
+        required: true
+    },
+    category: {
+        type: String,
+        enum: ["t-shirts", "shirts", "polo shirts", "trousers", "denim", "hoodies"],
+        required: true
+    }
 }, { timestamps: true })
 
 const Product = mongoose.model("Product", ProductSchema)

@@ -1,12 +1,13 @@
 import express, {type Request,type Response} from "express"
 import mongoose from "mongoose"
+import cors from "cors"
 import {ProductsRouter} from "./routes/product.route.js"
 
 
 const app = express()
 const PORT = 3000
 
-
+app.use(cors())
 app.use(express.json())
 app.use("/products", ProductsRouter)
 

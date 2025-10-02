@@ -1,8 +1,11 @@
-// import {useParams} from "react-router";
+import {useParams} from "react-router";
 import { Button } from "./components/ui/button"
+import {useGetProductByIdQuery} from "./redux/services/product.service.ts";
 
 const ProductDetails = () => {
-    // const {category, productId} = useParams()
+    const {productId} = useParams()
+    const {data} = useGetProductByIdQuery(productId as string)
+    console.log(data)
     return(
         <>
             <div className="mt-20 flex gap-16 px-12">

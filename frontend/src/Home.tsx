@@ -1,5 +1,5 @@
-import Hero from "./components/Hero.tsx";
-import ProductList from "./components/ProductList.tsx";
+import Hero from "./components/Hero.tsx"
+import ProductList from "./components/ProductList.tsx"
 
 const Home = () => {
     return (
