@@ -1,11 +1,21 @@
-import {useParams} from "react-router";
-import { Button } from "./components/ui/button"
-import {useGetProductByIdQuery} from "./redux/services/product.service.ts";
+import {useParams} from "react-router"
+import {Button} from "./components/ui/button"
+import {useDispatch} from "react-redux"
+import {useGetProductByIdQuery} from "./redux/services/product.service.ts"
+import type {AppDispatch} from "./redux/store.ts"
+import {addToCart} from "./redux/slices/product.slice.ts"
 
 const ProductDetails = () => {
     const {productId} = useParams()
     const {data} = useGetProductByIdQuery(productId as string)
-    console.log(data)
+    const dispatch = useDispatch<AppDispatch>()
+    const handleAddToCart = () => {
+        console.log(data)
+        dispatch(addToCart({
+            productId: productId,
+            quantity: 1,
+        }))
+    }
     return(
         <>
             <div className="mt-20 flex gap-16 px-12">
@@ -25,9 +35,11 @@ const ProductDetails = () => {
                     <div className="font-light text-xs uppercase text-gray-500">
                         MRP incl. of all taxes
                     </div>
-                    <hr className="my-8" />
-                    <Button variant="outline"
-                            className="font-light uppercase outline-none shadow-none rounded-none"
+                    <hr className="my-8"/>
+                    <Button
+                        variant="outline"
+                        className="font-light uppercase outline-none shadow-none rounded-none"
+                        onClick={handleAddToCart}
                     >
                         add
                     </Button>

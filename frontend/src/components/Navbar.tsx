@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
 import { FiShoppingBag } from "react-icons/fi"
+import {useSelector} from "react-redux"
+import type {RootState} from "../redux/store.ts";
 
 const Navbar = () => {
     const [navBackground, setNavBackground] = useState("bg-transparent")
+    const cartLength = useSelector((state: RootState) => state.cart.length)
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,7 +23,7 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
-          };
+        };
     }, [])
 
     return (
@@ -33,7 +37,12 @@ const Navbar = () => {
                         <NavLink to="/">home</NavLink>
                         <NavLink to="/mens">men</NavLink>
                         <NavLink to="/womans">woman</NavLink>
-                        <NavLink to="/cart">
+                        <NavLink to="/cart" className="relative">
+                            <div
+                                className="absolute right-[-5px] top-[-3px] bg-black w-4 h-4 rounded-full text-white flex item-center justify-center text-xs"
+                            >
+                                {cartLength}
+                            </div>
                             <FiShoppingBag size={20} />
                         </NavLink>
                     </div>
