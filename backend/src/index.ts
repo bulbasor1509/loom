@@ -20,7 +20,8 @@ app.get("/", (req: Request, res: Response) => {
 })
 
 function mongodbInit() {
-    mongoose.connect("mongodb://root:root@localhost:27017/loom?authSource=admin")
+    const mongolocalUrl = "mongodb://root:root@localhost:27017/loom?authSource=admin"
+    mongoose.connect("mongodb+srv://root:root@cluster0.scoe89l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
         .then(() => console.log("mongodb connected"))
         .catch(err => console.log(err))
 }
