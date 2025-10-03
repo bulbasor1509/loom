@@ -27,3 +27,5 @@ export const UserAPI = createApi({
         })
     })
 })
+
+export const {useSignInQuery} = UserAPI
