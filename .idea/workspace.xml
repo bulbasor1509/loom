@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1ee8f5-2425-4153-975e-f2dc195f0612" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bun.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/helpers/token.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/token.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/auth.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/auth.route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProtectedRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/services/query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/services/query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/slices/auth.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/slices/auth.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/slices/product.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/slices/product.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/user.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/user.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.node.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +52,9 @@
     &quot;accountId&quot;: &quot;a55153e2-da5f-46db-a377-13ccb04b775f&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -39,12 +67,14 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.auth.controller.ts.executor": "Debug",
+    "Node.js.index.ts.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "front/profile",
     "last_opened_file_path": "/Users/pathu/Developer/loom",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -87,6 +117,9 @@
       <workItem from="1759418060685" duration="2609000" />
       <workItem from="1759421577142" duration="5642000" />
       <workItem from="1759500906650" duration="37354000" />
+      <workItem from="1759570247155" duration="275000" />
+      <workItem from="1759570530530" duration="577000" />
+      <workItem from="1759572457744" duration="15999000" />
     </task>
     <servers />
   </component>

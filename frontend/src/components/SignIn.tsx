@@ -2,6 +2,11 @@ import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import {useSignInMutation} from "../redux/services/auth.service.ts"
 import {useNavigate} from "react-router"
+import {useDispatch} from "react-redux";
+import type {AppDispatch} from "@/types/store.type.ts";
+import {setToken} from "@/redux/slices/auth.slice.ts";
+import {setPersist} from "@/redux/slices/persist.slice.ts";
+
 
 export function UserInputComponent({type, name}:{type: string, name: string}){
     return (
@@ -20,13 +25,19 @@ export function UserInputComponent({type, name}:{type: string, name: string}){
 const SignIn = () => {
     const [triggerSignIn] = useSignInMutation()
     const navigate = useNavigate()
+    const dispatch = useDispatch<AppDispatch>()
+    // const [_, setPersist] = usePersist()
 
     const handleSignInAction = async (formData: FormData) => {
         const email = formData.get("email") as string
         const password = formData.get("password") as string
         console.log(email, password)
-        await triggerSignIn({ email, password })
-        navigate("/")
+        const userData = await triggerSignIn({ email, password }).unwrap()
+        if (userData.status === 200) {
+            dispatch(setToken(userData.data))
+            dispatch(setPersist(true))
+            return navigate("/")
+        }
     }
 
     return(

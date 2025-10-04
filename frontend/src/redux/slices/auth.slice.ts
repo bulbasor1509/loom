@@ -1,12 +1,9 @@
-import type {AuthType} from "../../types/user.type.ts"
+import type {AuthType} from "@/types/user.type.ts"
 import {createSlice} from "@reduxjs/toolkit"
 
-function loadAuthStateFromStorage(){
-    return localStorage.getItem("persist") === "true"
-}
 
 const authState:AuthType = {
-    persist: loadAuthStateFromStorage()
+    token: null
 }
 
 
@@ -15,14 +12,13 @@ export const AuthSlice = createSlice({
     name: "auth",
     initialState: authState,
     reducers: {
-        setToken(state) {
-            state.persist = true
-            localStorage.setItem("persist", "true")
+        setToken(state, action) {
+            const {token} = action.payload
+            state.token = token
         },
         clearToken(state) {
-            state.persist = false
-            localStorage.setItem("persist", "false")
-        },
+            state.token = null
+        }
     }
 })
 export const {setToken, clearToken } = AuthSlice.actions

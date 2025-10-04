@@ -3,6 +3,7 @@ import { CartSlice } from "./slices/product.slice.ts"
 import { AuthSlice } from "./slices/auth.slice.ts"
 import { ProductsAPI } from "./services/product.service.ts"
 import { AuthAPI } from "./services/auth.service.ts"
+import {PersistSlice} from "@/redux/slices/persist.slice.ts";
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         [AuthAPI.reducerPath]: AuthAPI.reducer,
         cart: CartSlice.reducer,
         auth: AuthSlice.reducer,
+        persist: PersistSlice.reducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(ProductsAPI.middleware, AuthAPI.middleware),

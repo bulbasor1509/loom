@@ -3,13 +3,14 @@ import mongoose from "mongoose"
 import cors from "cors"
 import {ProductsRouter} from "./routes/product.route.js"
 import {UserRouter} from "./routes/auth.route.js"
+import cookieParser from "cookie-parser"
 import {credentialsMiddleware} from "./middleware/credentials.js"
 
 
 const app = express()
 const PORT = 3000
 
-// app.use(credentialsMiddleware)
+app.use(cookieParser())
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true,
