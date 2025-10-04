@@ -2,12 +2,11 @@ import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
 import { FiShoppingBag } from "react-icons/fi"
 import {useSelector} from "react-redux"
-import type {RootState} from "../redux/store.ts";
+import type {RootState} from "../redux/store.ts"
 
 const Navbar = () => {
     const [navBackground, setNavBackground] = useState("bg-transparent")
     const cartLength = useSelector<RootState, number>(state => state.cart.length)
-
 
     useEffect(() => {
         const handleScroll = () => {

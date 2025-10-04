@@ -27,3 +27,4 @@ frontend/*.sw?
 
 ### BACKEND: gitignore
 backend/node_modules
+backed/dist

@@ -1,6 +1,6 @@
 import type {Request, Response} from "express"
 import Product from "../schema/product.schema.js"
-import {APIResponse} from "../response/response.js"
+import {APIResponse} from "../helpers/response.js"
 import {createInventoryController} from "./inventory.controller.js";
 
 const apiResponse = new APIResponse()
