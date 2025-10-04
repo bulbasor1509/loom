@@ -10,11 +10,13 @@ export const AuthSlice = createSlice({
     initialState: authState,
     reducers: {
         setToken(state, action) {
+            localStorage.setItem("persist", "true")
             state.token = action.payload
         },
         clearToken(state) {
+            localStorage.setItem("persist", "false")
             state.token = null
-        }
+        },
     }
 })
-export const {setToken, clearToken} = AuthSlice.actions
+export const {setToken, clearToken } = AuthSlice.actions

@@ -5,14 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1ee8f5-2425-4153-975e-f2dc195f0612" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/redux/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bun.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/helpers/hash.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/hash.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/helpers/token.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/token.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/response/response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/response.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/product.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/product.route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/product.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/product.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/user.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/auth.route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/schema/user.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/schema/user.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/services/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/slices/auth.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/slices/auth.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/user.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/user.type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +106,8 @@
       <workItem from="1759393143127" duration="2165000" />
       <workItem from="1759396398038" duration="12565000" />
       <workItem from="1759418060685" duration="2609000" />
-      <workItem from="1759421577142" duration="4642000" />
+      <workItem from="1759421577142" duration="5642000" />
+      <workItem from="1759500906650" duration="26951000" />
     </task>
     <servers />
   </component>

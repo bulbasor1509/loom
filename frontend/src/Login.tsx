@@ -13,6 +13,12 @@ const Login = () => {
                     </div>
                     <SignIn/>
                 </div>
+                <div
+                    className="w-1/2 bg-cover"
+                    style={{
+                        backgroundImage: `url(https://static.zara.net/assets/public/043a/7e92/30e64fd9b0a4/f9c6ef6640e6/image-web-9e05ec44-49ce-45ae-b2e6-dd1cddc7483f-default/image-web-9e05ec44-49ce-45ae-b2e6-dd1cddc7483f-default.jpg?ts=1758811652122&w=1440)`
+                    }}
+                ></div>
             </div>
         </>
     )

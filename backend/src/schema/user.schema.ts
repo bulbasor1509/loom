@@ -20,6 +20,7 @@ const UserSchema = new mongoose.Schema({
     city: {type: String},
     state: {type: String},
     phone: {type: String},
+    refreshToken: {type: String},
 })
 
 const User = mongoose.model("User", UserSchema)

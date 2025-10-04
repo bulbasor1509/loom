@@ -7,11 +7,14 @@ import ProductDetails from "./ProductDetails.tsx";
 import Footer from "./components/Footer.tsx";
 import Cart from "./Cart.tsx";
 import Login from "./Login.tsx";
+import Register from "./Register.tsx";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 
 const App = () => {
     const location = useLocation()
-    const hideNavFooter = location.pathname === "/login"
+    const hideNavFooter = location.pathname === "/login" || location.pathname === "/register"
+
     return(
         <>
             {!hideNavFooter && <Navbar/>}
@@ -21,7 +24,10 @@ const App = () => {
                 <Route path="/womans" Component={Womans} />
                 <Route path=":category/:productId" Component={ProductDetails} />
                 <Route path="/cart" Component={Cart}/>
-                <Route path="/login" Component={Login}/>
+                <Route element={<ProtectedRoute/>}>
+                    <Route path="/login" Component={Login}/>
+                    <Route path="/register" Component={Register}/>
+                </Route>
             </Routes>
             {!hideNavFooter && <Footer/>}
         </>
