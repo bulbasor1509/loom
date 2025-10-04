@@ -24,3 +24,6 @@ export interface AuthType {
     token: string | null
 }
 
+export interface PersistType{
+    persist: boolean
+}

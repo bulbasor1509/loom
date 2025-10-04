@@ -3,7 +3,6 @@ import User from "../schema/user.schema.js"
 import {compareUserPassword, hashUserPassword} from "../helpers/hash.js"
 import {generateAccessToken, generateRefreshToken, REFRESH_TOKEN_SECRET} from "../helpers/token.js"
 import {APIResponse} from "../helpers/response.js"
-import {serialize} from "cookie"
 import jwt, {type JwtPayload} from "jsonwebtoken";
 
 export interface DecodedTokenType extends JwtPayload {
@@ -107,21 +106,22 @@ async function verifyTokenSafe(token: string){
     })
 }
 
-export async function refreshTokenController(req: Request, res: Response) {
+export async function refreshTokenController(request: Request, response: Response) {
     try {
-        const cookies = req.cookies;
+        const cookies = request.cookies
+        console.log(request.cookies)
 
-        if (!cookies?.refreshToken) {
+        if (!cookies?.token) {
             return apiResponse.failureReturn({
-                response: res,
+                response: response,
                 status: 401,
                 message: "Refresh token not found in cookies",
             });
         }
 
-        const refreshToken = cookies.refreshToken;
+        const refreshToken = cookies.token;
 
-        res.clearCookie("token", {
+        response.clearCookie("token", {
             httpOnly: true,
             sameSite: "none",
             secure: true,
@@ -143,7 +143,7 @@ export async function refreshTokenController(req: Request, res: Response) {
             }
 
             return apiResponse.failureReturn({
-                response: res,
+                response: response,
                 status: 403,
                 message: "Forbidden: User not found",
             });
@@ -157,7 +157,7 @@ export async function refreshTokenController(req: Request, res: Response) {
             await foundUser.save();
 
             return apiResponse.failureReturn({
-                response: res,
+                response: response,
                 status: 403,
                 message: "Forbidden: Invalid token",
             });
@@ -167,7 +167,7 @@ export async function refreshTokenController(req: Request, res: Response) {
 
         if (foundUser.email !== email) {
             return apiResponse.failureReturn({
-                response: res,
+                response: response,
                 status: 403,
                 message: "Forbidden: Token/email mismatch",
             });
@@ -179,102 +179,63 @@ export async function refreshTokenController(req: Request, res: Response) {
         foundUser.refreshToken = newRefreshToken;
         await foundUser.save();
 
-        res.cookie("token", newRefreshToken, {
+        response.cookie("token", newRefreshToken, {
             httpOnly: true,
             sameSite: "none",
             secure: true,
         });
 
         return apiResponse.successReturn({
-            response: res,
+            response: response,
             status: 200,
             message: "Access token refreshed",
             data: { token: accessToken },
         });
     } catch (err) {
         return apiResponse.failureReturn({
-            response: res,
+            response: response,
             status: 500,
             message: (err as Error).message,
         });
     }
 }
 
-// export async function refreshTokenController(request: Request, response: Response) {
-//     try {
-//         const cookies = request.cookies
-//         if (!cookies) {
-//             apiResponse.failureReturn({
-//                 response: response,
-//                 status:401,
-//                 message: "cookie not found"
-//             })
-//         }
-//         const refreshToken = cookies.refreshToken
-//         response.clearCookie("token", {httpOnly: true, sameSite: "none", secure: true})
-//         const foundUser = await User.findOne({refreshToken})
-//
-//         if (!foundUser) {
-//             jwt.verify(refreshToken, REFRESH_TOKEN_SECRET, async (err: jwt.VerifyErrors | null, decoded: string | jwt.JwtPayload | undefined) => {
-//                 if (err) {
-//                     apiResponse.failureReturn({
-//                         response: response,
-//                         status: 403,
-//                         message: "forbidden"
-//                     })
-//                     const { email } = decoded as DecodedTokenType
-//                     const hackedUser = await User.findOne({email})
-//                     if (hackedUser) {
-//                         hackedUser.refreshToken = ""
-//                         const result = await hackedUser.save()
-//                     }
-//                 }
-//             })
-//             apiResponse.failureReturn({
-//                 response: response,
-//                 status: 403,
-//                 message: "forbidden"
-//             })
-//         } else {
-//             jwt.verify(refreshToken, REFRESH_TOKEN_SECRET, async (err: jwt.VerifyErrors | null, decoded: string | jwt.JwtPayload | undefined) => {
-//                 if (err) {
-//                     foundUser.refreshToken = ""
-//                     await foundUser.save()
-//                     apiResponse.failureReturn({
-//                         response: response,
-//                         status: 403,
-//                         message: "forbidden"
-//                     })
-//                 }
-//                 const { email } = decoded as DecodedTokenType
-//                 if (err || foundUser.email !== email) {
-//                     apiResponse.failureReturn({
-//                         response: response,
-//                         status: 403,
-//                         message: "forbidden"
-//                     })
-//                 }
-//
-//                 const accessToken = generateAccessToken(foundUser._id.toString(), email)
-//                 const newRefreshToken = generateRefreshToken(foundUser._id.toString(), email)
-//                 foundUser.refreshToken = newRefreshToken
-//                 await foundUser.save()
-//                 response.cookie("token", newRefreshToken, {httpOnly: true, sameSite: "none", secure: true})
-//                 apiResponse.successReturn({
-//                     response: response,
-//                     status: 200,
-//                     data: {
-//                         token: accessToken
-//                     },
-//                     message: "access token revalidated"
-//                 })
-//             })
-//         }
-//     } catch (err){
-//         apiResponse.failureReturn({
-//             response: response,
-//             status: 404,
-//             message: (err as Error).message
-//         })
-//     }
-// }
+export async function logoutController(request: Request, response: Response) {
+    try{
+        const cookies = request.cookies
+        if (!cookies?.token) {
+            return apiResponse.successReturn({
+                response: response,
+                status: 204,
+                data: [],
+                message: "No content"
+            })
+        }
+        const refreshToken = cookies.token
+        const foundUser = await User.findOne({refreshToken})
+        if (!foundUser) {
+            response.clearCookie("token", {httpOnly: true, sameSite: "none", secure: true})
+            return apiResponse.successReturn({
+                response: response,
+                status: 204,
+                data: [],
+                message: "No content"
+            })
+        }
+        foundUser.refreshToken = ""
+        await foundUser.save()
+        response.clearCookie("token", {httpOnly: true, sameSite: "none", secure: true})
+        return apiResponse.successReturn({
+            response: response,
+            status: 204,
+            data: [],
+            message: "No content"
+        })
+    } catch (err){
+        return apiResponse.failureReturn({
+            response: response,
+            status: 204,
+            message: (err as Error).message,
+        })
+    }
+}

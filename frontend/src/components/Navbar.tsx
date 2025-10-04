@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
 import { FiShoppingBag } from "react-icons/fi"
 import {useSelector} from "react-redux"
-import type {RootState} from "../redux/store.ts"
+import type {RootState} from "../types/store.type.ts"
 
 const Navbar = () => {
     const [navBackground, setNavBackground] = useState("bg-transparent")
@@ -33,6 +33,7 @@ const Navbar = () => {
                         loom
                     </div>
                     <div className="h-full flex items-center justify-center gap-8 uppercase text-xs">
+                        <NavLink to="/profile">profile</NavLink>
                         <NavLink to="/">home</NavLink>
                         <NavLink to="/mens">men</NavLink>
                         <NavLink to="/womans">woman</NavLink>
