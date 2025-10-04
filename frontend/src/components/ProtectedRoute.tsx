@@ -1,18 +1,14 @@
-import {useTokenRefreshMutation} from "../redux/services/auth.service.ts"
-import {useEffect} from "react";
 import {Outlet, Navigate} from "react-router"
+import {useSelector} from "react-redux";
+import type {RootState} from "../types/store.type";
 
 const ProtectedRoute = () => {
-    const [refreshToken] =useTokenRefreshMutation()
-    const persistLogin = JSON.parse(localStorage.getItem("persist") as string) as boolean
-    useEffect(() => {
-        refreshToken()
-    }, [refreshToken])
+    const token = useSelector((state: RootState) => state.auth.token)
 
     return (
         <>
             {
-                persistLogin ? <Outlet/> : <Navigate to="/login" />
+                token ? <Outlet/> : <Navigate to="/login" />
             }
         </>
     )

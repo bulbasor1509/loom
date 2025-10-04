@@ -9,9 +9,9 @@ import {credentialsMiddleware} from "./middleware/credentials.js"
 const app = express()
 const PORT = 3000
 
-app.use(credentialsMiddleware)
+// app.use(credentialsMiddleware)
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true,
 }))
 app.use(express.json())
