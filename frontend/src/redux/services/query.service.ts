@@ -1,38 +1,34 @@
-import { fetchBaseQuery} from "@reduxjs/toolkit/query/react"
-import {type RootState} from "../../types/store.type.ts"
-import Cookies from "js-cookie"
+import {fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import type {RootState} from "../../types/store.type";
 import type {BaseQueryFn, FetchArgs, FetchBaseQueryError} from "@reduxjs/toolkit/query";
 import {setToken} from "../slices/auth.slice.ts";
 
-export const RawBaseQuery = fetchBaseQuery({
-    baseUrl: "http://localhost:3000/user",
+const baseQuery = fetchBaseQuery({
+    baseUrl: "http://localhost:3000",
     credentials: "include",
-    prepareHeaders: (headers, { getState }) => {
-        const token = (getState() as RootState).auth.token || Cookies.get("token")
+    prepareHeaders: (headers, {getState}) => {
+        const token = getState() as RootState
         if (token) {
-            headers.set("Authorization", `Bearer ${token}`)
+            headers.set("authorization", `Bearer ${token}`)
         }
         return headers
     }
 })
 
-export const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (
-    args, api, extraOptions) =>{
-    let result = await RawBaseQuery(args, api, extraOptions)
+export const BaseQueryWithReauth:BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (args, api, extraOptions) => {
+    const result = await baseQuery(args, api, extraOptions)
 
     if (result.error && result.error.status === 401){
-        const refreshResult = await RawBaseQuery(
-            { url: "/refresh", method: "GET" },
-            api,
-            extraOptions
-        )
+        const refreshToken = await baseQuery({
+            url: "/user/refresh",
+        },api, extraOptions)
 
-        if (refreshResult?.data) {
-            api.dispatch(setToken((refreshResult.data)))
-            result = await RawBaseQuery(args, api, extraOptions)
+        if (refreshToken?.data){
+            api.dispatch(setToken(refreshToken.data))
         } else {
             api.dispatch(setToken(null))
         }
     }
     return result
 }
+

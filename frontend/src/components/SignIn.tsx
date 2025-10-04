@@ -24,8 +24,9 @@ const SignIn = () => {
     const handleSignInAction = async (formData: FormData) => {
         const email = formData.get("email") as string
         const password = formData.get("password") as string
+        console.log(email, password)
         await triggerSignIn({ email, password })
-        navigate("/login")
+        navigate("/")
     }
 
     return(
@@ -38,13 +39,15 @@ const SignIn = () => {
                         type="submit" variant={"outline"}
                         className="w-full rounded-none uppercase bg-gray-950 text-white text-sm font-light"
                     >log in</Button>
-                    <Button
-                        variant={"outline"}
-                        className="w-full rounded-none uppercase text-sm font-light"
-                        onClick={() => navigate("/register")}
-                    >register</Button>
                 </div>
             </form>
+            <div className="w-3/4 mt-4">
+                <Button
+                    variant={"outline"}
+                    className="w-full rounded-none uppercase text-sm font-light"
+                    onClick={() => navigate("/register")}
+                >register</Button>
+            </div>
         </>
     )
 }

@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1ee8f5-2425-4153-975e-f2dc195f0612" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/auth.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProtectedRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/services/query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/services/query.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +95,7 @@
       <workItem from="1759396398038" duration="12565000" />
       <workItem from="1759418060685" duration="2609000" />
       <workItem from="1759421577142" duration="5642000" />
-      <workItem from="1759500906650" duration="34325000" />
+      <workItem from="1759500906650" duration="37031000" />
     </task>
     <servers />
   </component>

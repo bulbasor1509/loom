@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux"
-import type {RootState} from "./redux/store.ts"
 import type {CartItemType} from "./types/cart.types.ts"
 import {useGetAllProductsQuery} from "./redux/services/product.service.ts"
+import type {RootState} from "./types/store.type.ts";
 
 const Cart = () => {
     const cartItems = useSelector<RootState, CartItemType[]>(state => state.cart)
