@@ -8,7 +8,7 @@ export function generateAccessToken(userId: string, email: string){
         userId,
         email,
     }, ACCESS_TOKEN_SECRET, {
-        expiresIn: "10s"
+        expiresIn: "15m"
     })
 }
 

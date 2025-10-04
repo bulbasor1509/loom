@@ -17,20 +17,22 @@ const App = () => {
 
     return(
         <>
-            {!hideNavFooter && <Navbar/>}
-            <Routes>
-                <Route path="/" Component={Home} />
-                <Route path="/mens" Component={Mens}/>
-                <Route path="/womans" Component={Womans} />
-                <Route path=":category/:productId" Component={ProductDetails} />
-                <Route path="/cart" Component={Cart}/>
-                <Route path="/login" Component={Login}/>
-                <Route path="/register" Component={Register}/>
-                <Route element={<ProtectedRoute/>}>
-                    <Route path="/profile" Component={Profile}/>
-                </Route>
-            </Routes>
-            {!hideNavFooter && <Footer/>}
+            <div className="min-h-screen flex flex-col">
+                {!hideNavFooter && <Navbar/>}
+                <Routes>
+                    <Route path="/" Component={Home} />
+                    <Route path="/mens" Component={Mens}/>
+                    <Route path="/womans" Component={Womans} />
+                    <Route path=":category/:productId" Component={ProductDetails} />
+                    <Route path="/cart" Component={Cart}/>
+                    <Route path="/login" Component={Login}/>
+                    <Route path="/register" Component={Register}/>
+                    <Route element={<ProtectedRoute/>}>
+                        <Route path="/profile" Component={Profile}/>
+                    </Route>
+                </Routes>
+                {!hideNavFooter && <Footer/>}
+            </div>
         </>
     )
 }

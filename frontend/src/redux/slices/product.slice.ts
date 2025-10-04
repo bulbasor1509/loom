@@ -1,5 +1,5 @@
 import {createSlice}  from "@reduxjs/toolkit"
-import type {CartItemType} from "../../types/cart.types.ts"
+import type {CartItemType} from "@/types/cart.types.ts"
 
 function loadItemsFromStorage() : CartItemType[] {
     const cart = localStorage.getItem("cart")
