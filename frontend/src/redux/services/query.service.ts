@@ -24,6 +24,7 @@ export const BaseQueryWithReauth:BaseQueryFn<string | FetchArgs, unknown, FetchB
         },api, extraOptions)
 
         if (refreshToken?.data){
+            console.log(refreshToken)
             api.dispatch(setToken(refreshToken.data))
         } else {
             api.dispatch(setToken(null))

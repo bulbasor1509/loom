@@ -21,6 +21,6 @@ export interface SignInResponseType {
 export type SignInAPIResponseType = SignInResponseType & APIResponseType
 
 export interface AuthType {
-    token: string | null
+    persist: boolean
 }
 

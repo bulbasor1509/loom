@@ -9,7 +9,7 @@ import Cart from "./Cart.tsx";
 import Login from "./Login.tsx";
 import Register from "./Register.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
-
+import Profile from "./Profile.tsx";
 
 const App = () => {
     const location = useLocation()
@@ -24,9 +24,10 @@ const App = () => {
                 <Route path="/womans" Component={Womans} />
                 <Route path=":category/:productId" Component={ProductDetails} />
                 <Route path="/cart" Component={Cart}/>
+                <Route path="/login" Component={Login}/>
+                <Route path="/register" Component={Register}/>
                 <Route element={<ProtectedRoute/>}>
-                    <Route path="/login" Component={Login}/>
-                    <Route path="/register" Component={Register}/>
+                    <Route path="/profile" Component={Profile}/>
                 </Route>
             </Routes>
             {!hideNavFooter && <Footer/>}

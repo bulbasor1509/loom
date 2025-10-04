@@ -6,6 +6,7 @@ import type {
     SignUpAPIResponseType,
     SignUpRequestType
 } from "../../types/user.type.ts";
+import {setToken} from "../slices/auth.slice.ts";
 
 
 export const AuthAPI = createApi({
@@ -18,7 +19,11 @@ export const AuthAPI = createApi({
                 credentials: "include",
                 method: "POST",
                 body: credentials
-            })
+            }),
+            async onQueryStarted(_, {dispatch}){
+                // const {data} = await queryFulfilled
+                dispatch(setToken())
+            }
         }),
         signUp: builder.mutation<SignUpAPIResponseType,SignUpRequestType>({
             query: (credentials: SignUpRequestType) => ({
